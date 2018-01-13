@@ -9,7 +9,9 @@ var gulp         = require('gulp'),
 
 gulp.task('sass', function(){
   return gulp.src('src/scss/style.scss')
-    .pipe(sass())
+    .pipe(sass({
+      includePaths: ['node_modules/foundation-sites/scss']
+    }))
     .pipe(autoprefixer({ browsers: ['last 2 version'] }))
     .pipe(gulp.dest('src/css/'))
     .pipe(browserSync.stream());
