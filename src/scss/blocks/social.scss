@@ -1,0 +1,51 @@
+.social {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  width: 100%;
+
+  @media screen and (min-width: $screen-sm-min) {
+    justify-content: flex-start;
+  }
+
+
+  &__link {
+    display: inline-block;
+    padding: 7px;
+    margin-right: 10px;
+
+    &:first-child {
+      padding-left: 0;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    svg {
+      transform: scale(0.8);
+      transition: transform .25s;
+
+      @media screen and (min-width: $screen-md-min) {
+        transform: scale(1);
+      }
+    }
+
+    &:hover {
+      svg {
+        transform: scale(1.1);
+
+        @media screen and (min-width: $screen-md-min) {
+          transform: scale(1.3);
+        }
+      }
+    }
+  }
+
+  &--black {
+    svg {
+      fill: #000000;
+    }
+  }
+}
+

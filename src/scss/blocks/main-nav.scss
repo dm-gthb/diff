@@ -1,0 +1,108 @@
+.main-nav {
+  position: absolute;
+  top: 0;
+  left: -20px;
+  right: -20px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .2s .3s, width .4s .1s, flex .4s .1s;
+  padding: 10px 0;
+
+  @media screen and (min-width: $screen-md-min) {
+    position: static;
+    flex: 0 1 50%;
+    padding: 0;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: space-between;
+    min-height: 100%;
+  }
+
+  &__item {
+    flex-basis: 100%;
+    text-align: center;
+
+    @media screen and (min-width: $screen-md-min) {
+      flex-basis: 50%;
+      transform: rotate(-135deg) scale(0);
+      transition: transform .3s;
+
+      &:nth-child(2n) {
+        transform: rotate(135deg) scale(0);
+      }
+    }
+  }
+
+  &__link {
+    display: inline-block;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.38;
+    text-decoration: none;
+    color: $text-gray--lightest;
+    text-transform: uppercase;
+    padding: 5px;
+    position: relative;
+    transition: transform .3s;
+
+    @media screen and (min-width: $screen-md-min) {
+      padding: 0 5px;
+      padding-bottom: 8px;
+      font-size: 23px;
+
+      &::after {
+        content: '';
+        width: 56px;
+        height: 3px;
+        background-color: $text-gray--lightest;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        transition: all .3s;
+      }
+    }
+
+    @media screen and (min-width: $screen-lg-min) {
+      padding: 0 10px;
+      padding-bottom: 20px;
+      font-size: 29px;
+    }
+
+    &:hover {
+      transform: scale(1.2);
+      @media screen and (min-width: $screen-md-min) {
+        transform: none;
+      }
+
+      &::after {
+        width: 0;
+      }
+    }
+  }
+
+  &--active {
+    opacity: 1;
+    visibility: visible;
+
+    @media screen and (min-width: $screen-md-min) {
+
+      .main-nav__item {
+        transform: rotate(0deg) scale(1);
+
+        &:nth-child(2n) {
+          transform: rotate(0deg) scale(1);
+        }
+      }
+    }
+  }
+}

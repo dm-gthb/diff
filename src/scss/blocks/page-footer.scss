@@ -1,0 +1,50 @@
+.page-footer {
+  text-align: center;
+  padding-top: 30px;
+  padding-bottom: 20px;
+  background-image: url("../../img/bg-footer@2x.jpg");
+
+  @media screen and (min-width: $screen-sm-min) {
+    padding-top: 40px;
+    padding-bottom: 30px;
+  }
+
+  @media screen and (min-width: $screen-md-min) {
+    padding-top: 50px;
+    padding-bottom: 40px;
+  }
+
+  @media screen and (min-width: $screen-lg-min) {
+    padding-top: 85px;
+    padding-bottom: 50px;
+  }
+
+  &__logo {
+    max-width: 90px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+
+    @media screen and (min-width: $screen-md-min) {
+      max-width: 110px;
+      margin-bottom: 40px;
+    }
+  }
+
+  &__link,
+  &__copyright {
+    font-family: $font-family--lato;
+    font-size: 16px;
+    line-height: 2;
+    font-weight: 400;
+    color: $text-gray--light;
+    margin: 0;
+
+    @media screen and (min-width: $screen-md-min) {
+      font-size: 19px;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+  }
+}

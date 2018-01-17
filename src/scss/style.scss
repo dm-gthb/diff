@@ -4,6 +4,18 @@
 @include foundation-flex-classes;
 
 @import 'variables.scss';
+@import 'mixins.scss';
 @import 'common.scss';
 
-// @import 'blocks/main-logo.scss';
+@import 'blocks/page-header.scss';
+@import 'blocks/toggler.scss';
+@import 'blocks/main-nav.scss';
+@import 'blocks/social.scss';
+@import 'blocks/about.scss';
+@import 'blocks/works.scss';
+@import 'blocks/btn.scss';
+@import 'blocks/clients.scss';
+@import 'blocks/blog.scss';
+@import 'blocks/article.scss';
+@import 'blocks/in-touch.scss';
+@import 'blocks/page-footer.scss';

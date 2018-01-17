@@ -1,0 +1,31 @@
+@mixin section-title {
+  font-size: 30px;
+  line-height: 1.5;
+  font-weight: 700;
+  color: $text-gray;
+  text-transform: uppercase;
+  display: inline-block;
+  margin: 0;
+  position: relative;
+
+  @media screen and (min-width: $screen-md-min) {
+    font-size: 40px;
+  }
+}
+
+@mixin title-decoration-next-line {
+  &::after {
+    content: '';
+    position: absolute;
+    width: 40%;
+    height: 5px;
+    background-color: #000;
+    top: 50%;
+    left: 42%;
+  }
+
+  span {
+    display: inline-block;
+    transform: translate(-30%, 65%);
+  }
+}

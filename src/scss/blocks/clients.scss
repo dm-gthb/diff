@@ -1,0 +1,130 @@
+.clients {
+  background: $gray--light;
+  text-align: center;
+  padding: 50px 0;
+
+  @media screen and (min-width: $screen-md-min) {
+    padding-top: 80px;
+    padding-bottom: 250px;
+  }
+
+  @media screen and (min-width: $screen-lg-min) {
+    padding-top: 150px;
+    padding-bottom: 400px;
+  }
+
+
+
+  &__title {
+    @include section-title();
+    @include title-decoration-next-line();
+    margin-bottom: 60px;
+
+    @media screen and (min-width: $screen-md-min) {
+      margin-bottom: 75px;
+    }
+
+    @media screen and (min-width: $screen-lg-min) {
+      margin-bottom: 85px;
+    }
+  }
+
+  &__items {
+    font-size: 0;
+  }
+
+  &__item {
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 10px;
+
+
+    @media screen and (min-width: $screen-md-min) {
+      margin-bottom: 30px;
+    }
+
+    svg {
+      display: block;
+      width: 100%;
+      max-width: 340px;
+      transition: opacity .3s;
+
+      @media screen and (min-width: $screen-md-min) {
+        max-width: 100%;
+      }
+    }
+
+    &--microsoft {
+      svg {
+        max-width: 100%;
+      }
+    }
+
+    &--apple {
+
+      @media screen and (min-width: $screen-md-min) {
+        transform: translateY(110%);
+        position: relative;
+
+        &::before {
+          content: '';
+          width: 70%;
+          height: 70%;
+          position: absolute;
+          left: 50%;
+          top: -50%;
+          transform: translate(-50%, -50%);
+          background-image: url("../../img/line--clients.svg");
+          background-repeat: no-repeat;
+          background-size: 100% 100%;
+          pointer-events: none;
+        }
+      }
+    }
+
+    &--behance {
+      @media screen and (min-width: $screen-md-min) {
+        transform: translateY(20%);
+      }
+    }
+
+    &--google {
+      @media screen and (min-width: $screen-md-min) {
+        transform: translate(-50%, 280%);
+      }
+    }
+
+    &--evernote {
+
+      @media screen and (min-width: $screen-md-min) {
+        position: relative;
+
+        &::before {
+          content: '';
+          width: 46%;
+          height: 26%;
+          position: absolute;
+          left: 50%;
+          top: -50%;
+          transform: translate(-50%, -55%);
+          background-image: url("../../img/lines--clients.svg");
+          background-repeat: no-repeat;
+          background-size: 100% 100%;
+          pointer-events: none;
+        }
+      }
+    }
+
+    &:hover {
+      svg {
+        opacity: .8;
+      }
+    }
+  }
+
+  &__last-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}
