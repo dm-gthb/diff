@@ -9,7 +9,7 @@
 
   @media screen and (min-width: $screen-md-min) {
     padding-top: 60px;
-    padding-bottom: 120px;
+    padding-bottom: 100px;
   }
   @media screen and (min-width: $screen-lg-min) {
     padding: 150px 0;
@@ -44,8 +44,13 @@
 
   &__img-wrapper {
     padding: 0;
+
     @media screen and (min-width: $screen-md-min) {
       padding: 0 15px;
+      position: relative;
+      padding-bottom: 34.2%;
+      height: 0;
+      z-index: 1;
     }
   }
 
@@ -55,16 +60,25 @@
     margin-bottom: 15px;
 
     @media screen and (min-width: $screen-md-min) {
-      margin-bottom: 0;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 115.2%;
+      height: 100%;
+      margin: 0;
     }
   }
 
   &__description-wrapper {
+    position: relative;
+    z-index: 2;
 
     @media screen and (min-width: $screen-md-min) {
-      position: absolute;
-      left: 50%;
-      top: 15%;
+      padding-top: 40px;
+    }
+
+    @media screen and (min-width: $screen-lg-min) {
+      padding-top: 60px;
     }
   }
 
@@ -76,6 +90,10 @@
     line-height: 1.5;
     font-weight: 400;
     color: $text-gray;
+    opacity: 1;
+    max-height: 1500px;
+    overflow: hidden;
+    transition: all .35s ease;
 
     @media screen and (min-width: $screen-md-min) {
       font-size: 22px;
@@ -85,10 +103,55 @@
       font-size: 24px;
       line-height: 1.67;
     }
+
+    &--hidden {
+      max-height: 0;
+      opacity: 0;
+      transition: all .35s;
+    }
+
+    &:first-child {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__description-button {
+    font-family: $font-family--lato;
+    font-size: 20px;
+    line-height: 1.5;
+    font-weight: 400;
+    background: none;
+    border: none;
+    outline: none;
+    color: #0000ff;
+    position: relative;
+    cursor: pointer;
+
+    &::after {
+      content: '(+)';
+      position: absolute;
+      left: 0;
+      top: -23px;
+      opacity: 1;
+      transition: opacity .15s;
+    }
+
+    &::before {
+      content: '(—)';
+      position: absolute;
+      left: -2px;
+      top: -23px;
+      opacity: 0;
+      transition: opacity .2s;
+    }
+
+    &--transformed {
+      &::after {
+        opacity: 0;
+      }
+      &::before {
+        opacity: 1;
+      }
+    }
   }
 }
-
-
-
-
-
